@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusUp</title>
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+  <header>
+    <img src="img/icon.png"alt="FocusUp Logo">
+  </header>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="#AboutUs">Sobre nosotros</a>
+    <a href="#FocusApp">Nuestra app</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+  <main>
+
+    <section id="AboutUs">
+      <h2>Sobre nosotros</h2>
+      <p>FocusUp es una app diseñada para ayudarte a concentrarte y mejorar tu productividad. Con herramientas innovadoras y una interfaz amigable, te acompañamos en tu camino hacia el éxito.</p>
+    </section>
+
+    <section id="FocusApp">
+      <h2>Nuestra app</h2>
+      <p>Descubre todas las funcionalidades de FocusUp: temporizadores, estadísticas de uso, y más. ¡Descárgala ahora y comienza a enfocarte!</p>
+    </section>
+    
+    <div class="carousel">
+      <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+  
+      <div class="carousel-window">
+        <div class="carousel-images" id="carousel">
+          <img src="img/image.png" alt="Imagen 1">
+          <img src="img/imagen.jpg" alt="Imagen 2">
+          <img src="img/imagenes.jpg" alt="Imagen 3">
+        </div>
+      </div>
+  
+      <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    <section class="noticias">
+      <h2>🗞️ Últimas Noticias</h2>
+      <div class="news-grid">
+        <div class="card">
+          <img src="img/img.jpg" alt="noticia">
+          <h3>Nueva noticia</h3>
+          <p>descipcion de la noticia</p>
+          <a href="" target="_blank">Leer más</a>
+        </div>
+        <div class="card">
+          <img src="img/img.jpg" alt="noticia">
+          <h3>Nueva noticia</h3>
+          <p>descipcion de la noticia</p>
+          <a href="">Leer más</a>
+        </div>
+         <div class="card">
+          <img src="img/img.jpg" alt="noticia">
+          <h3>Nueva noticia</h3>
+          <p>descipcion de la noticia</p>
+          <a href="">Leer más</a>
+        </div>
+      </div>
+    </section>
+    
+    <section class="testimonios">
+      <h2>💬 Lo que dicen los fans</h2>
+      <div class="testimonial-grid">
+        <blockquote>
+          <p>“comentario de la app”</p>
+          <cite>- JediFan88</cite>
+        </blockquote>
+        <blockquote>
+          <p>“comentario de la app”</p>
+          <cite>- SableRojo</cite>
+        </blockquote>
+        <blockquote>
+          <p>“comentario de la app”</p>
+          <cite>- Skywalker91</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="contacto" class="content">
+    <h2>Contacto</h2>
+    <form id="formulario-contacto">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="email">Correo electrónico</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="mensaje">Mensaje</label>
+    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+    <button type="submit">Enviar</button>
+    </form>
+</section>
+
+    
+    
+  </main>
+  
+  <footer>
+    <p>Síguenos en:</p>
+    <a href="https://www.facebook.com//" target="_blank">Facebook</a>
+    <a href="https://twitter.com/" target="_blank">Twitter</a>
+    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+
+    <p>
+      Desarrollado por: FocusApp 2025
+    </p>
+
+
+
+
+  </footer>
+  <script>
+    let index = 0;
+    function moveSlide(step) {
+      const carousel = document.getElementById('carousel');
+      const totalSlides = carousel.children.length;
+      index = (index + step + totalSlides) % totalSlides;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }
+    document.getElementById("formulario-contacto").addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.");
+    this.reset(); });// Limpia el formulario
+  </script>
+</body>
+</html>
